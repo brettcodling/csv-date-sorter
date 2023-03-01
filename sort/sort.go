@@ -13,7 +13,7 @@ func Sort(input string, output string, column int, dateFormat string, hasHeader 
 	if err != nil {
 		panic(err)
 	}
-	outfile, err := os.Create(output)
+	outfile, err := os.Create(output + "temp")
 	if err != nil {
 		panic(err)
 	}
@@ -55,4 +55,6 @@ func Sort(input string, output string, column int, dateFormat string, hasHeader 
 	if writer.Error() != nil {
 		panic(writer.Error().Error())
 	}
+
+	os.Rename(output+"temp", output)
 }
