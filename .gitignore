@@ -1,1 +1,2 @@
-csv-date-sorter
+cmd/csv-date-sorter/csv-date-sorter
+cmd/csv-date-sorter/sorted.csv
