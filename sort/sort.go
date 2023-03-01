@@ -13,10 +13,12 @@ func Sort(input string, output string, column int, dateFormat string, hasHeader 
 	if err != nil {
 		panic(err)
 	}
+	defer infile.Close()
 	outfile, err := os.Create(output + "temp")
 	if err != nil {
 		panic(err)
 	}
+	defer outfile.Close()
 
 	reader := csv.NewReader(infile)
 	writer := csv.NewWriter(outfile)
